@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - AutoRental System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="display: flex; align-items:center; justify-content:center; text-align:center; min-height: 100vh;">
+
+    <div style="max-width: 900px; padding: 4rem; position: relative; z-index: 2;">
+        
+        <i class="fa-solid fa-car-side" style="font-size: 5rem; color: var(--primary); margin-bottom: 2rem; filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.5));"></i>
+        
+        <h1 style="font-size: 4.5rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.1; text-shadow: 0 10px 30px rgba(0,0,0,0.5);">AutoRental<br><span style="background: linear-gradient(to right, #C4B5FD, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">System Portal</span></h1>
+        
+        <p style="color: #94A3B8; font-size: 1.3rem; margin-bottom: 5rem;">Select your secure access level to continue routing into the JVM server engine.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+            
+            <!-- User Portal Box -->
+            <a href="userHome.jsp" style="text-decoration: none; position: relative; display: block; overflow: visible;" class="v-card">
+                <div style="padding: 4rem 2rem;">
+                    <i class="fa-solid fa-user-group" style="font-size: 3.5rem; color: #10B981; margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.4));"></i>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #fff;">Customer Portal</h2>
+                    <p style="color: #94A3B8; font-size: 1rem; line-height: 1.5;">Enter as a standard user to securely query global vehicle data and map real-time JDBC reservations.</p>
+                </div>
+            </a>
+
+            <!-- Admin Portal Box -->
+            <a href="viewVehicles.jsp" style="text-decoration: none; position: relative; display: block; overflow: visible;" class="v-card">
+                <div style="padding: 4rem 2rem;">
+                    <i class="fa-solid fa-user-shield" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 2rem; filter: drop-shadow(0 0 15px rgba(139, 92, 246, 0.4));"></i>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: #fff;">Admin Portal</h2>
+                    <p style="color: #94A3B8; font-size: 1rem; line-height: 1.5;">Enter as an administrator mapping to the MySQL layer to construct, manipulate, and permanently erase encrypted fleet records.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+</html>

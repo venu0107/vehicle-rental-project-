@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Vehicle - AutoRent Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="app.js"></script>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.forms["addForm"]["name"].value;
+            const type = document.forms["addForm"]["type"].value;
+            const price = document.forms["addForm"]["price"].value;
+            
+            if (name == "" || type == "" || price == "") {
+                alert("All required fields must be filled out");
+                return false;
+            }
+            if(isNaN(price) || price <= 0) {
+                alert("Please enter a valid positive price.");
+                return false;
+            }
+
+            addVehicle(name, type, price);
+            
+            document.getElementById("success-msg").style.display = "flex";
+            document.forms["addForm"].reset();
+            return false;
+        }
+    </script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <a href="index.html" class="brand">
+            <i class="fa-solid fa-car-side"></i> AutoRent Pro
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fa-solid fa-layer-group"></i> Dashboard</a></li>
+            <li><a href="viewVehicles.html"><i class="fa-solid fa-car"></i> Fleet Overview</a></li>
+            <li><a href="addVehicle.html" class="active"><i class="fa-solid fa-square-plus"></i> Add Vehicle</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div>
+                <h1 class="page-title">Vehicle Inventory Management</h1>
+                <p style="color: var(--text-muted); margin-top: 5px;">Securely add new vehicles to your virtual fleet database.</p>
+            </div>
+            <div class="user-profile">
+                <span>System Admin</span>
+                <img src="https://ui-avatars.com/api/?name=Admin&background=4F46E5&color=fff" alt="User">
+            </div>
+        </header>
+
+        <div id="success-msg" style="display:none; background: #DCFCE7; color: #166534; padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem; border-left: 5px solid #10B981; align-items:center; gap: 15px;">
+            <i class='fa-solid fa-circle-check fa-2x'></i>
+            <div><strong style='display:block;'>Transaction Successful!</strong>The vehicle was added securely to the central fleet.</div>
+        </div>
+
+        <section class="content-card pro-form">
+            <h3 style="margin-bottom: 2rem; font-size: 1.5rem;"><i class="fa-solid fa-file-invoice" style="color: var(--primary);"></i> Specification Form</h3>
+            <form name="addForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Make & Model</label>
+                    <input type="text" name="name" class="form-input" placeholder="e.g., Mercedes G-Wagon" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Classification Tag</label>
+                    <input type="text" name="type" class="form-input" placeholder="e.g., Luxury SUV" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Daily Rental Rate ($)</label>
+                    <input type="number" name="price" class="form-input" placeholder="e.g., 400" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">
+                    <i class="fa-solid fa-cloud-arrow-up"></i> Execute Action
+                </button>
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>
